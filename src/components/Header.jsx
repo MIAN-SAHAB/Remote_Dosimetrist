@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   const wrapperRef = useRef(null);
-  const alreadyShown = sessionStorage.getItem("preloaderShown");
+  const [alreadyShown, setAlreadyShown] = useState(sessionStorage.getItem("preloaderShown"));
   useEffect(() => {
     if (alreadyShown) {
-      wrapperRef.current.style.opacity = 1;
+      setAlreadyShown(true);
     }
   }, [alreadyShown])
   return (
@@ -27,10 +27,12 @@ export default function Header() {
             <a href="#process" className="hover:text-purple-700 transition-colors">Process</a>
             <a href="#contact" className="hover:text-purple-700 transition-colors">Contact Us</a>
           </nav>
-          <FontAwesomeIcon icon={faMagnifyingGlass} color="#A4A4A4" />
+          <div>
+            <img src="assets/search-icon.svg" alt="" />
+          </div>
           <a
             href="#get-in-touch"
-            className="bg-gray-800 !text-white px-5 py-2 rounded-xl shadow-lg hover:bg-gray-700 transition-colors text-sm font-medium"
+            className="bg-gray-800 !text-white px-5 py-2 rounded-full shadow-lg hover:bg-gray-700 transition-colors text-sm font-medium"
           > GET IN TOUCH </a>
         </div>
       </div>

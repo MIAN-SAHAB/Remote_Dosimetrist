@@ -1,13 +1,23 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:,wght@0,100..900;1,100..900&display=swap');
+
+
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif; 
+}
 
 html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  /* font-family: var(--font-montserrat); */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -20,7 +30,7 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 a {
   font-weight: 500;
@@ -46,24 +56,32 @@ body {
   );
 }
 
+p{
+  font-size: 20px;
+  /* letter-spacing: -25px; */
+  /* line-height: 37px; */
+}
+
 button {
-  border-radius: 8px;
+  /* border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-weight: 500; */
+  font-size: 20px;
+  font-weight: 400;
+  /* font-family: 'Montserrat'; */
+  background-color: #003777;
+  color: #FFF;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
 }
-button:focus,
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -73,8 +91,69 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
+  /* button {
     background-color: #f9f9f9;
-  }
+  } */
 }
 
+.modules-slider .swiper-slide div h2,.modules-slider .swiper-slide div p,.modules-slider .swiper-slide div button {
+  display: none;
+}
+.modules-slider .swiper-slide-active div h2,.modules-slider .swiper-slide-active div p,.modules-slider .swiper-slide-active div button {
+  display: block;
+}
+.modules-slider .swiper-slide-next div img {
+  transform: rotate(45deg) translate(50px,150px) !important;
+  transition: transform 0.5s ease;
+}
+.modules-slider .swiper-slide-prev div img, .modules-slider .swiper-slide div img {
+  transform: rotate(-45deg) translate(-50px,150px);
+  transition: transform 0.5s ease;
+}
+.modules-slider .swiper-slide-active div img{
+  transform: rotate(0deg) translate(0px,0px);
+  transition: transform 0.5s ease;
+}
+.swiper-button-prev .swiper-navigation-icon path,.swiper-button-next .swiper-navigation-icon path{
+  fill: rgb(0, 55, 119);
+}
+.review-main p {
+    font-size: 18px;
+    font-weight: 300 !important;
+}
+.review-section .flex.text-lg {
+    color: red;
+    font-size: 26px;
+}
+.review-section img {
+    transform: unset !important;
+}
+.swiper-slide .review-main svg path {
+    fill: #5c296c;
+}
+.swiper-slide-active .review-main svg path {
+    fill: #fff;
+}
+.review-slider .swiper-slide-active {
+  background-color: #003777;
+  padding-top: 46.34px;
+  padding-bottom: 59.67px;
+  padding-left: 49.63px;
+  padding-right: 50.63px;
+  p,h4{
+    color: #FFF !important;
+  }
+  img{
+    height: 48px;
+    width: 48px;
+  }
+}
+.review-slider .swiper-slide-active .review-main > div {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.review-slider .swiper-button-prev,.review-slider .swiper-button-next {
+  svg {
+    height: 50%;
+  }
+}

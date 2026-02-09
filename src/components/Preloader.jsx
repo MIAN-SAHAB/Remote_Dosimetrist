@@ -80,11 +80,11 @@ export default function Preloader() {
         muted
         playsInline
         className="object-cover w-full h-full"
-        poster="public/assets/preloader-image.png"
+        poster="assets/preloader-image.png"
       >
-        <source src="public/assets/preloader-video.mp4" type="video/mp4" />
+        <source src="assets/preloader-video.mp4" type="video/mp4" />
       </video>
-      <img src="public/assets/logo.png" className="absolute w-[195.26px] h-[56.69px]" ref={logoImg} style={{ clipPath: "inset(0% 100% 0% 0%)" }} alt="" />
+      <img src="assets/logo.png" className="absolute w-[195.26px] h-[56.69px]" ref={logoImg} style={{ clipPath: "inset(0% 100% 0% 0%)" }} alt="" />
     </div>
   );
 }
