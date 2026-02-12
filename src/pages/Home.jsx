@@ -33,7 +33,7 @@ export default function Home({ alreadyShown }) {
   }, [alreadyShown]);
 
   useGSAP(() => {
-    
+
     gsap.set(".s-3-div-1, .s-3-div-3", { width: 620, height: 566 });
     gsap.set(".s-3-div-2", { width: 620 });
     const tl = gsap.timeline({
@@ -45,7 +45,7 @@ export default function Home({ alreadyShown }) {
         // toggleActions: "play none none reverse"
       },
       delay: 0,
-      onComplete: () => {},
+      onComplete: () => { },
     });
     tl.to(videoRef.current, {
       opacity: 0.5,
@@ -89,7 +89,7 @@ export default function Home({ alreadyShown }) {
         // toggleActions: "play none none reverse",
       },
       delay: 0,
-      onComplete: () => {},
+      onComplete: () => { },
     });
     tls3.to(".s-3-video", {
       width: "100%",
@@ -155,7 +155,7 @@ export default function Home({ alreadyShown }) {
         // markers: true
       },
       delay: 0,
-      onComplete: () => {},
+      onComplete: () => { },
     });
     tls5.to(".s-5-c-1", {
       y: 0,
@@ -184,43 +184,43 @@ export default function Home({ alreadyShown }) {
         // markers: true
       },
       delay: 0,
-      onComplete: () => {},
+      onComplete: () => { },
     });
     tls4.to(".area-main", {
       scale: 1.8,
       rotate: 180,
       duration: 1
     })
-    .to(".s-4-heading-2", {
-      opacity: 0,
-      duration: 2
-    }, "<")
-    .to(".s-4-heading-1", {
-      opacity: 1,
-      duration: 2
-    }, "<")
-    .to(".area-main", {
-      y: 300,
-      duration: 2
-    }, "<")
-    .to(".s-4-bg-color" ,{
-      height: "20%",
-      duration: 2
-    }, "<")
-    .to(".s-4-bg-image" ,{
-      scale: 1,
-      rotate: -180,
-      duration: 2
-    }, "<")
-    .to(".content-main" ,{
-      scale: 1,
-      rotate: 180,
-      duration: 2
-    }, "<")
-    .to(".content-main" ,{
-      opacity: 1,
-      duration: 2
-    }, ">");
+      .to(".s-4-heading-2", {
+        opacity: 0,
+        duration: 2
+      }, "<")
+      .to(".s-4-heading-1", {
+        opacity: 1,
+        duration: 2
+      }, "<")
+      .to(".area-main", {
+        y: 300,
+        duration: 2
+      }, "<")
+      .to(".s-4-bg-color", {
+        height: "20%",
+        duration: 2
+      }, "<")
+      .to(".s-4-bg-image", {
+        scale: 1,
+        rotate: -180,
+        duration: 2
+      }, "<")
+      .to(".content-main", {
+        scale: 1,
+        rotate: 180,
+        duration: 2
+      }, "<")
+      .to(".content-main", {
+        opacity: 1,
+        duration: 2
+      }, ">");
   });
   return (
     <section
@@ -281,8 +281,8 @@ export default function Home({ alreadyShown }) {
             have the patient's best needs at heart on any treatment plan that we
             create for you, the client.
           </p>
-          <button className="w-[223px] h-[54px] rounded-full">
-            Discover More
+          <button className="ip-btn ip-btn-primary w-fit mt-3">
+            Discover More <span>→</span>
           </button>
         </div>
       </div>
@@ -338,9 +338,8 @@ export default function Home({ alreadyShown }) {
                     Volumetric modulated arc therapy (VMAT) has rapidly become
                     the standard of care in the radiation oncology...
                   </p>
-                  <button className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">
-                    Discover More
-                    <span>→</span>
+                  <button className="ip-btn ip-btn-primary w-fit mt-3">
+                    Discover More <span>→</span>
                   </button>
                 </div>
               </div>
@@ -361,7 +360,7 @@ export default function Home({ alreadyShown }) {
       <div className="min-h-[200dvh]">
         <div className="section-4 w-full min-h-dvh relative flex justify-center items-center sticky top-0">
           <div className="w-full h-full">
-            
+
             <div className="s-4-bg-color w-full h-full flex justify-center absolute left-0 top-0 items-center"
               style={{
                 backgroundColor: "#003777",
@@ -388,10 +387,9 @@ export default function Home({ alreadyShown }) {
                       {hoverData.para}
                     </p>
                     <div className="m-auto flex justify-center btn-circle">
-                    <button className="inline-flex w-[200px] !text-[13px] justify-center font-thin items-center gap-2 bg-[#003777] mt-5 text-white px-6 py-3 rounded-full transition">
-                      Discover More
-                      <span>→</span>
-                    </button>
+                      <button className="w-[223px] h-[54px] rounded-full">
+                        Discover More
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -443,10 +441,9 @@ export default function Home({ alreadyShown }) {
               during these critical and challenging times of mandated or
               self-quarantine.
             </p>
-            <button className="border-[1px] inline-flex w-[35%] !text-[13px] font-thin items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition">
-              Discover More
-              <span>→</span>
-            </button>
+            <a href="/about" className="ip-btn ip-btn-outline w-fit">
+              Discover More <span>→</span>
+            </a>
           </div>
           <div>
             <img src="assets/5th-sec-img-1.png" alt="" />
@@ -467,10 +464,9 @@ export default function Home({ alreadyShown }) {
             If the patient demand isn’t enough for a small town, hiring a remote
             worker makes more sense.
           </p>
-          <button className="s-5-button  translate-y-[500px] border-[1px] inline-flex w-[35%] !text-[13px] font-thin items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition opacity-0">
-            Discover More
-            <span>→</span>
-          </button>
+          <a href="/about" className="ip-btn ip-btn-outline w-fit">
+            Discover More <span>→</span>
+          </a>
         </div>
       </div>
       <div

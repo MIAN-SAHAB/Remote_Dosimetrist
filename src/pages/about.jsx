@@ -124,9 +124,9 @@ export default function About() {
                     personal time off (PTO), work overflow, sick time, to filling the workload
                     of a full-time employee, and anything in between.
                   </p>
-                  <button className="ip-btn ip-btn-outline w-fit">
+                  <a href="/about" className="ip-btn ip-btn-outline w-fit">
                     Discover More <span>→</span>
-                  </button>
+                  </a>
                 </div>
                 {/* Bottom image */}
                 <div className="ip-image-wrap">
@@ -166,9 +166,9 @@ export default function About() {
                     certified medical dosimetrists have a minimum of 15 years of dedicated
                     dosimetry experience.
                   </p>
-                  <button className="ip-btn ip-btn-outline w-fit">
+                  <a href="/about" className="ip-btn ip-btn-outline w-fit">
                     Discover More <span>→</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </SectionReveal>

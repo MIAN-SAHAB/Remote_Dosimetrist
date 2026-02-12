@@ -120,9 +120,6 @@ export default function Plans() {
                           <p className="text-[#434961] text-[18px] leading-[32px] -tracking-[0.2px] max-w-[560px]">
                             {plan.text}
                           </p>
-                          <button className="ip-btn ip-btn-primary w-fit mt-3">
-                            Learn More <span>→</span>
-                          </button>
                         </div>
                       </div>
                     </div>

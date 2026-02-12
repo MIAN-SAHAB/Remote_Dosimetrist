@@ -114,9 +114,8 @@ export default function AreasofFocus() {
 
                       {/* ── Content ── */}
                       <div
-                        className={`relative ${
-                          isEven ? "lg:order-2" : "lg:order-1"
-                        }`}
+                        className={`relative ${isEven ? "lg:order-2" : "lg:order-1"
+                          }`}
                       >
                         {/* Watermark number */}
                         <span className="absolute -top-4 right-0 text-[160px] font-black leading-none select-none pointer-events-none text-[#003777]/[0.03]">
@@ -304,12 +303,10 @@ export default function AreasofFocus() {
               <a href="/contact" className="ip-btn ip-btn-outline">
                 Contact Us <span>→</span>
               </a>
-              <a
-                href="/plans"
-                className="text-white/60 text-[14px] font-semibold tracking-[0.5px] uppercase hover:text-white/90 transition-colors duration-300"
-              >
-                View Our Plans →
+              <a href="/plans" className="ip-btn ip-btn-outline w-fit">
+                View Our Plans <span>→</span>
               </a>
+
             </div>
           </SectionReveal>
         </div>
