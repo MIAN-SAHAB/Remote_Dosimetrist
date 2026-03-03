@@ -250,7 +250,7 @@ export default function Home({ alreadyShown }) {
             muted
             loop
             playsInline
-            src="assets/bg-video.mp4"
+            src="assets/bg-video-2.mp4"
           ></video>
           <div
             className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
