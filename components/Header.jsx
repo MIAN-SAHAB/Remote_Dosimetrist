@@ -68,6 +68,7 @@ export default function Header() {
           <nav className="flex space-x-[30px]">
             <Link href="/how-it-works" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>How it works</Link>
             <Link href="/process" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>Process</Link>
+            <Link href="/faq" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>Faqs</Link>
             <Link href="/contact" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>Contact Us</Link>
           </nav>
           <a
