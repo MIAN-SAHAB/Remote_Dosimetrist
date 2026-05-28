@@ -1,11 +1,18 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import FaqAccordionList from './FaqAccordionList'
 
 export default function GetInTouch({ data, faqLimit, faqViewAllHref }) {
   if (!data) return null
   const [loading, setLoading] = useState(false)
-  const [toast, setToast] = useState(null)
+  const [toast, setToast] = useState(null);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   const showToast = (msg) => {
     setToast(msg)
@@ -14,13 +21,19 @@ export default function GetInTouch({ data, faqLimit, faqViewAllHref }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setLoading(true)
+    setLoading(true);
+
+    const token = await grecaptcha.execute(
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+      { action: "contact" }
+    );
 
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
       phone: e.target.phone.value,
       message: e.target.message.value,
+      token: token
     }
 
     try {

@@ -1,12 +1,20 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState(null);
-//   const recaptchaRef = useRef();
+
+  useEffect(() => {
+    if (document.querySelector('script[src*="recaptcha/api.js"]')) return;
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+  //   const recaptchaRef = useRef();
 
   const showToast = (msg) => {
     setToast(msg);
@@ -25,13 +33,42 @@ export default function ContactForm() {
 
     setLoading(true);
 
+    if (typeof window === "undefined" || !window.grecaptcha) {
+      showToast("reCAPTCHA not loaded yet, please try again");
+      setLoading(false);
+      return;
+    }
+
+    let token;
+    try {
+      token = await new Promise((resolve, reject) => {
+        window.grecaptcha.ready(async () => {
+          try {
+            const t = await window.grecaptcha.execute(
+              process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+              { action: "contact" }
+            );
+            resolve(t);
+          } catch (err) {
+            reject(err);
+          }
+        });
+      });
+    } catch (err) {
+      console.error("reCAPTCHA error:", err);
+      showToast("reCAPTCHA verification failed");
+      setLoading(false);
+      return;
+    }
+
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
       phone: e.target.phone.value,
       message: e.target.message.value,
       contact_method: e.target["contact-method"]?.value || "",
-    //   recaptcha: token,
+      token
+      //   recaptcha: token,
     };
 
     try {
