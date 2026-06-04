@@ -32,6 +32,7 @@ export default function Header() {
     { to: '/plans', label: 'Our Plans' },
     { to: '/process', label: 'Process' },
     { to: '/systems', label: 'Systems' },
+    { to: '/blog', label: 'Blog' },
     { to: '/contact', label: 'Contact Us' },
   ]
 
@@ -48,6 +49,7 @@ export default function Header() {
           <Link href="/about" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>About Us</Link>
           <Link href="/areas" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>Areas of Focus</Link>
           <Link href="/plans" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>Our Plans</Link>
+          <Link href="/blog" className={`${animatedUnderlineClass} hover:text-[#003777] text-gray-800 font-bold text-md transition-colors capitalize`}>Blog</Link>
         </nav>
 
         {/* Logo */}

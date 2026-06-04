@@ -12,6 +12,7 @@ export default function sitemap() {
     { url: `${baseUrl}/systems`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/how-it-works`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${baseUrl}/faq`, priority: 0.75, changeFrequency: 'monthly' },
+    { url: `${baseUrl}/blog`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/contact`, priority: 0.85, changeFrequency: 'monthly' },
   ]
 
