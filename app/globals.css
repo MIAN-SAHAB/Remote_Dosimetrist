@@ -1169,8 +1169,7 @@ button:focus-visible {
 @media (max-width: 768px) {
 
   .inner-hero-orb,
-  [class*="orb"],
-  [class*="grain"] {
+  .ip-grain::after {
     display: none;
   }
 
