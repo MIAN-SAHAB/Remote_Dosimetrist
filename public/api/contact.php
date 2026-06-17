@@ -3,7 +3,7 @@
 // Contact form proxy — replaces the Next.js /api/contact route
 // Update the two constants below to match your .env.local values
 // ============================================================
-define('WP_API_URL',        'https://api-rd.demo-link.tech/wp-json/custom/v1/contact-submission-next');
+define('WP_API_URL',        'https://api.remotedosimetrist.com/wp-json/custom/v1/contact-submission-next');
 define('WP_API_SECRET_KEY', 'YOUR_WP_API_SECRET_KEY_HERE'); // <-- replace this
 
 header('Content-Type: application/json');
