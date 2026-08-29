@@ -104,7 +104,9 @@ export default function ContactForm() {
         <input name="email" type="email" placeholder="Email Address" className="ip-form-input" required />
         <input name="phone" placeholder="Phone Number" className="ip-form-input" />
         <textarea name="message" placeholder="Your Message" rows="5" className="ip-form-textarea" required />
-        <div className="flex gap-6">
+        <div className="flex flex-col gap-2">
+          <span className="text-sm">Best way to reach you?</span>
+          <div className="flex gap-6">
           <label className="flex gap-2">
             <input type="radio" name="contact-method" value="email" />
             Email
@@ -113,6 +115,7 @@ export default function ContactForm() {
             <input type="radio" name="contact-method" value="phone" />
             Phone
           </label>
+          </div>
         </div>
 
         {/*
