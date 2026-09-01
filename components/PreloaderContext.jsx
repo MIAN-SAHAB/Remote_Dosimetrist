@@ -18,6 +18,8 @@ export function PreloaderProvider({ children }) {
 
   const markShown = () => {
     sessionStorage.setItem('preloaderShown', 'true')
+    document.documentElement.classList.remove('preloader-active')
+    document.documentElement.classList.add('preloader-done')
     setAlreadyShown(true)
   }
 

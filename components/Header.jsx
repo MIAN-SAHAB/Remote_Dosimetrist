@@ -2,10 +2,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-// import { usePreloader } from './PreloaderContext'
+import { usePreloader } from './PreloaderContext'
 
 export default function Header() {
-  // const { alreadyShown } = usePreloader()
+  const { alreadyShown } = usePreloader()
   const wrapperRef = useRef(null)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -13,10 +13,10 @@ export default function Header() {
     "relative inline-block pb-[2px] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[1.5px] after:w-full after:bg-[#003777] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
 
   useEffect(() => {
-    // if (alreadyShown && wrapperRef.current) {
-    wrapperRef.current.style.top = '0px'
-    // }
-  }, [])
+    if (alreadyShown && wrapperRef.current) {
+      wrapperRef.current.style.top = '0px'
+    }
+  }, [alreadyShown])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''

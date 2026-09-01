@@ -75,12 +75,16 @@ export default function Preloader() {
       )
   }, [checked, alreadyShown])
 
-  if (!checked || alreadyShown) return null
+  // Rendered on the server too, so the overlay is part of the very first paint and
+  // page content can never flash behind it. Returning visitors have it hidden by CSS
+  // (html.preloader-done) before this unmounts it.
+  if (checked && alreadyShown) return null
 
   return (
     <div
+      id="site-preloader"
       ref={wrapperRef}
-      className="z-[9999] absolute w-screen h-screen flex left-[0px] justify-center items-center bg-white"
+      className="flex justify-center items-center bg-white"
     >
       <video
         ref={videoRef}

@@ -26,6 +26,19 @@ body {
   font-style: normal;
 }
 
+/* Preloader: rendered in the first paint so page content never flashes before it.
+   The blocking script in <head> stamps html.preloader-done when the preloader has
+   already run this session, which hides the overlay before it can ever be painted. */
+#site-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+html.preloader-done #site-preloader {
+  display: none;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

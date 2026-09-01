@@ -62,17 +62,25 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify(schema),
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{document.documentElement.classList.add(sessionStorage.getItem('preloaderShown')==='true'?'preloader-done':'preloader-active')}catch(e){}`,
+          }}
+        />
+        <noscript>
+          <style>{`#site-preloader{display:none}`}</style>
+        </noscript>
       </head>
       <body>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5C8BSRH"
           height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
-        {/* <PreloaderProvider> */}
-        {/* <Preloader />  */}
-        <Header />
-        <DeferredPopup />
-        {children}
-        <Footer />
-        {/* </PreloaderProvider> */}
+        <PreloaderProvider>
+          <Preloader />
+          <Header />
+          <DeferredPopup />
+          {children}
+          <Footer />
+        </PreloaderProvider>
       </body>
     </html>
   )
